@@ -863,3 +863,44 @@ code {font-family:monospace;padding:2px 4px;border-radius:4px;background:#d5f4f4
     width: min(85vw, 37dvh);
   }
 }
+
+/* ACCUEIL MOBILE : PLEIN ECRAN SANS MARGES */
+@media (max-width: 560px) {
+
+  html:has(.intro),
+  body:has(.intro),
+  body:has(.intro) #root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .intro {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .intro .atmosphere {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .intro .scene-image {
+    position: absolute;
+    inset: -3%;
+    background-position: center;
+    background-size: cover;
+  }
+}
