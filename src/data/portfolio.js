@@ -14,7 +14,7 @@ export const portfolio = {
     intro: 'Passionnée par la création visuelle et le numérique, j’aime explorer différents domaines, du design à la communication en passant par le web. Curieuse et polyvalente, j’aime apprendre, expérimenter et donner vie à de nouvelles idées.',
     aboutTitle: 'Créativité et curiosité.',
 about: "Issue d’un parcours en arts appliqués, je m’intéresse aussi bien à la création visuelle qu’à l’informatique. Du design graphique au développement web, en passant par la conception d’interfaces et la modélisation 3D, j’aime explorer différents outils et associer créativité et technique dans mes projets personnels.",    location: 'Paris',
-    availability: `En recherche d'alternance`,
+    availability: `En recherche d'alternance`
   },
   sound: {
     // Optionnel : mets un MP3 à toi dans public/audio/ et indique « /audio/mon-son.mp3 ».
