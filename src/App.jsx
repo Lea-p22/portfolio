@@ -364,12 +364,20 @@ function Portfolio({ onHome, musicOn, onMusicToggle }) {
 </section>
 
         <section className="section-block contact-section" id="contact">
-          <div className="section-heading"><div><span className="section-index">04 / LET'S CONNECT</span><h2>Me <em>contacter ?</em></h2></div></div>
-          <GlassWindow title="new_message.eml" icon={Mail} className="contact-window"><div className="contact-window__body"><div className="contact-copy"><span className="contact-eyebrow">✧ A NEW CONNECTION</span><h3>La prochaine bonne idée<br/>commence peut-être <em>ici.</em></h3><p>Un projet, une collab ou juste envie de discuter créa et frontend ? Ma boîte de réception est ouverte.</p><div className="contact-buttons">{contact.email ? <><GlossButton href={`mailto:${contact.email}`} icon={Mail}>M’envoyer un e-mail</GlossButton><button type="button" onClick={copyMail} className="copy-mail">{copied ? <Check size={17}/> : <Mail size={17}/>} {copied ? 'Copié !' : 'Copier mon adresse'}</button></> : <div className="contact-setup"><Mail size={18}/> Ajoute ton adresse e-mail dans <code>src/data/portfolio.js</code> pour activer le contact.</div>}</div><div className="social-links">{socials.map(({name, url, Icon}) => <a key={name} href={url} target="_blank" rel="noopener noreferrer"><Icon size={18}/>{name}<ArrowUpRight size={15}/></a>)}</div></div><div className="contact-art" aria-hidden="true"><div className="contact-envelope"><span>✦</span><div className="contact-envelope__flap"/></div><span className="contact-art__sparkle">✳</span><span className="contact-art__bubble"/></div></div></GlassWindow>
+          <div className="section-heading"><div><span className="section-index">04 / RESTONS EN CONTACT</span><h2>Me <em>contacter ?</em></h2></div></div>
+          <GlassWindow title="contact.eml" icon={Mail} className="contact-window"><div className="contact-window__body"><div className="contact-copy"><span className="contact-eyebrow">✧ RESTONS EN CONTACT</span><h3>
+  Une question, un projet<br/>
+  ou une <em>opportunité ?</em>
+</h3><p>Je suis ouverte aux échanges, aux collaborations et aux opportunités professionnelles. N'hésitez pas à me contacter, je serai ravie d'en discuter avec vous.</p><div className="contact-buttons">{contact.email ? <><GlossButton
+  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(contact.email)}`}
+  icon={Mail}
+>
+  M’envoyer un e-mail
+</GlossButton><button type="button" onClick={copyMail} className="copy-mail">{copied ? <Check size={17}/> : <Mail size={17}/>} {copied ? 'Copié !' : 'Copier mon adresse'}</button></> : <div className="contact-setup"><Mail size={18}/> Ajoute ton adresse e-mail dans <code>src/data/portfolio.js</code> pour activer le contact.</div>}</div><div className="social-links">{socials.map(({name, url, Icon}) => <a key={name} href={url} target="_blank" rel="noopener noreferrer"><Icon size={18}/>{name}<ArrowUpRight size={15}/></a>)}</div></div><div className="contact-art" aria-hidden="true"><div className="contact-envelope"><span>✦</span><div className="contact-envelope__flap"/></div><span className="contact-art__sparkle">✳</span><span className="contact-art__bubble"/></div></div></GlassWindow>
         </section>
       </main>
 
-      <footer className="desktop-footer"><div><span className="brand-orb"/> aeroOS <span className="footer-divider">|</span> {identity.name} © {new Date().getFullYear()} <span className="footer-divider">|</span> MADE WITH ♡ & REACT</div><div><button type="button" onClick={onHome}><ArrowLeft size={15}/> Retour au bureau</button><span>✳ thanks for visiting</span></div></footer>
+      <footer className="desktop-footer"><div><span className="brand-orb"/> aeroOS <span className="footer-divider">|</span> {identity.name} © {new Date().getFullYear()} <span className="footer-divider">|</span> DESIGN & DÉVELOPPEMENT : LÉA</div><div><button type="button" onClick={onHome}><ArrowLeft size={15}/> Retour au bureau</button><span>✳ thanks for visiting</span></div></footer>
       {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)}/>}
     </div>
   );
@@ -381,6 +389,7 @@ export default function App() {
   const entranceTimer = useRef(null);
 
   useEffect(() => {
+
     return () => {
       if (entranceTimer.current) clearTimeout(entranceTimer.current);
       stopAmbience();
